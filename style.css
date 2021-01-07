@@ -1,0 +1,1501 @@
+:root {
+    --modal-duration: 1s;
+    --primary-color: #9ce300;
+    --secondary: #fff;
+    --main-grey: #f4f4f4;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Lato', sans-serif;
+    scroll-behavior: smooth;
+    transition: all 1s ease;
+    overflow-x: hidden !important;
+    overflow-y: scroll;
+    transition: all 1s ease-in-out;
+}
+
+/* The transparent nav bar on the top containing the logo and burger button */
+#top-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Top Navbar Logo */
+#logo {
+    margin-top: 10px;
+    height: 80%;
+    width: 80%;
+    
+}
+/* When hovering over the logo in the navbar */
+.img-home-link {
+    transition: all 0.5s ease;
+}
+.img-home-link:hover {
+    opacity: 0.6;
+    transition: all 0.5s ease;
+}
+
+/* The container for the top white nav */
+#sticky-nav{
+    background-color: white;
+    position: fixed; 
+    top: -100px;
+    width: 100%;
+    display: block;
+    transition: top 0.5s;
+    border-bottom: 1px rgba(63, 63, 63, 0.1) solid;
+    z-index: 1;
+}
+
+/* The top WHITE nav bar appearing after scrolling down */
+#top-nav-white {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    color: black;
+    z-index: 2;
+}
+.main-nav {
+    max-width: 100%;
+    margin: auto;
+    width: 1150px;
+}
+/* The toggle button inside the white navbar */
+#top-nav-white .toggle {
+    font-size: 20px;
+    background: none;
+    color: black;
+    padding: 0.4rem 0.6rem;
+    border: 2px black solid;
+    cursor: pointer;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+}
+
+/* Top Navbar Logo */
+#logo {
+    margin-top: 10px;
+    height: 80%;
+    width: 80%;   
+}
+
+/* All link elements */
+a {
+    /* display: inline-block; */
+    text-decoration: none;
+}
+
+/* Main header that contains the colorful background image */
+#header-home {
+    background: chartreuse;
+    background: url("./img/main-bg.jpg") no-repeat center center/cover;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+/* The main text in the center of the header */
+.header-intro-text{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-45%);
+    min-width: 900px;
+    opacity: 0;
+    animation: header-intro-text 1s ease;
+    animation-fill-mode: forwards;   
+}
+.header-intro-text:hover {
+    cursor: pointer;
+}
+/* The header containing the text */
+.header-hide {
+    font-size: 100px;
+    line-height: 100px;
+    font-family: 'Chronicle Display',serif;
+    background: #fff;
+    color: #000;
+    padding-left: .5rem;
+    padding-right: .5rem;
+    padding-bottom: .5rem;
+    display: inline-block;
+    text-align: left;
+}
+/* The div containing the black box h2 */
+.span-block {
+    transform: translateX(15%);
+    animation: span-block 1s ease;
+    animation-fill-mode: forwards;
+}
+/* Black BOX header under the white header in the center */
+.black-bg-head {
+    font-family: 'Bebas Neue',sans-serif;
+    letter-spacing: .1rem;
+    font-size: 40px;
+    font-weight: normal;
+    background: #000;
+    color: #fff;
+    padding-left: .5rem;
+    padding-right: .3rem;
+    padding-top: .3rem;
+    padding-bottom: .25rem;
+    display: inline-block;
+}
+
+/* These are the slide in and fade in animations for the white and black headers on the first page */
+.header-intro-text{
+    animation-delay: 0.8s;
+}
+.span-block {
+    animation-delay: 1s;
+}
+
+@keyframes header-intro-text {
+    to {
+        opacity: 1; 
+        transform: translateX(-60%); 
+    }
+  }
+
+@keyframes span-block {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+/* End of animation *********************** */
+
+/* SCROLL button on the bottom of the page */
+.scroll-button {
+    width: 200px;
+    height: 75px;
+    /* background-color: violet; */
+    display: block;
+    margin: auto;
+    margin-top: 62%;
+    font-family: 'Bebas Neue',sans-serif;
+    font-size: 25px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    opacity: 0.9;
+}
+/* The div containing the anchor */
+#scroll-link {
+    justify-self: center;
+    height: 10px;
+}
+#scroll-link a{
+    color: white;
+    display: inline-block;
+}
+
+/* Chevron */
+#relChevron {
+    position: relative;
+    opacity: 0.8;
+}
+#chevron {
+    position: absolute;
+    text-align: center;
+    padding: 2px;
+    margin-bottom: 6px;
+    height: 2px;
+    width: 200px;
+    /* background-color: violet; */
+    /* border-radius: 10px; */
+  }
+  #chevron:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 50%;
+    background: rgb(255, 255, 255);
+    transform: skew(0deg, 15deg);
+    border-radius: 30px;
+  }
+  #chevron:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 50%;
+    background: rgb(255, 255, 255);
+    transform: skew(0deg, -15deg);
+    border-radius: 30px;
+  }
+
+/* The side bar */
+#sidebar {
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 300px;
+    height: 100%;
+    z-index: 100;
+    transition: all 1s ease;
+    transform: translateX(-300px);
+    min-height: 100%;
+    padding: 0;
+    box-shadow: inset -7px 0 9px -7px rgba( 0, 0, 0, 0.6 );
+}
+
+#sidebar.show-nav {
+    transform: translateX(0px);
+}
+
+/* The list inside the sidebar */
+#sidebar ul {
+    margin-top: 80px;
+    list-style: none;
+}
+/* the sidebar list element */
+#sidebar ul li {
+    width: 100%;
+    display: block;
+    margin-bottom: 0;
+}
+/* the sidebar links */
+#sidebar ul li a {
+    font-family: 'Lato',sans-serif;
+    font-size: 12px;
+    line-height: 1;
+    color: #999999;
+    text-decoration: none;
+    display: block;
+    padding-left: 40px;
+    padding-bottom: 13px;
+    padding-top: 13px;
+    word-wrap: break-word;
+    transition: all 0.3s ease;
+}
+/* hover state for links */
+#sidebar ul li a:hover {
+    color: black; 
+    transition: all 0.3s ease;
+}
+/* The header links */
+#sidebar ul li .head1 {
+    font-family: 'Chronicle Display',serif;
+    color: black;
+    font-weight: 800;
+    font-size: 28px;
+}
+/* The header link hover state */
+#sidebar ul li .head1:hover {
+    color: black;
+}
+
+/* The close button (the x in the right corner of the menu) */
+#close {
+    display: inline-block;
+    margin-top: 25px;
+    margin-left: 260px;
+    font-size: 16px;
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    cursor: pointer;
+    /* margin-left: 170px; */
+    transition: all 0.5s ease;
+}
+
+#close:hover{
+    color: #666;
+    transition: all 0.5s ease;
+}
+
+#close:focus{
+    outline: none;
+}
+
+
+
+
+/* Utility */
+.container {
+    /* display: block; */
+    /* padding: 15px; */
+    max-width: 100%;
+    margin: auto;
+    max-width: 1150px;
+}
+
+.div-block-black {
+    height: 90px;
+    width: 100vw;
+    background-color: black;
+}
+.div-block-white {
+    height: 90px;
+    width: 100vw;
+    background-color: #fff;
+}
+
+.div-block-grey {
+    height: 90px;
+    width: 100vw;
+    background-color: #f4f4f4;
+    /* border-color: #f4f4f4; */
+}
+
+.main-header {
+    font-size: 4rem;
+    font-weight: 400;
+    font-family: 'Chronicle Display',serif;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    margin: 0 0 2rem 0;
+}
+
+.p-style {
+    margin-top: 1.5rem;
+    padding-left: 7px;
+}
+
+.p-big {
+    font-family: "Lato", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 0.4px;
+}
+
+/* the toggle button/burger */
+.toggle {
+    font-size: 20px;
+    background: none;
+    color: #fff;
+    padding: 0.4rem 0.6rem;
+    border: 2px #fff solid;
+    cursor: pointer;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+}
+button:focus {
+    outline: none;
+}
+
+/* Overlay */
+.modal-container {
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    animation-name: modalopen;
+    animation-duration: 0.5s;
+}
+/* The class added after clicking the burger button */
+.modal-container.show-modal {
+    display: block;
+    z-index: 10;
+}
+/* ---- new one */
+.modal-container.close-modal {
+    background-color: rgba(0, 0, 0, 0.6);
+    display: block;
+    position: fixed;
+    /* z-index: 10; */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    animation: modalclose;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes modalopen {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/* new one---- easy transition for the modal */
+@keyframes modalclose {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+
+
+/* site font 'Open Sans','Helvetica Neue',sans-serif; */
+/* h1, h2, h3, h4 {font-family: 'Chronicle Display',serif;} */
+
+/* Intro */
+#intro {
+    background-color: black;
+    line-height: 2.5rem;
+}
+
+#intro-div{
+    background-color: black;
+    color: #fff;
+    margin: auto;
+    padding-top: 90px;
+    /* padding-bottom: 90px; */
+    /* margin: 0 0 3rem 0; */
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 23px;
+    max-width: 800px;
+    letter-spacing: 0.5px;
+    
+}
+
+/* The big circle above the title */
+#intro-div #circle {
+    display: block;
+    /* background-color: var(--primary-color); */
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    margin: auto;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 2px;
+    font-size: 28px;
+    text-transform: uppercase;
+}
+
+.green-tint {
+    background-color: var(--primary-color);
+    text-transform: uppercase;
+    color: black;
+    padding: 0 5px 0 5px;
+    letter-spacing: 0.5px;
+}
+/* Green state */
+.green-state {
+    background: rgb(156, 227, 0);
+}
+/* Pink state */
+.pink-state {
+    background-color: rgb(255, 89, 197);
+    color: white;
+}
+/* Blue state */
+.blue-state {
+    background: rgb(0, 173, 238);
+    color: white;
+}
+/* Orange state */
+.orange-state {
+    background: rgb(255, 104, 24);
+    color: white;
+}
+/* Purple state */
+.purple-state {
+    background: rgb(189, 16, 224);
+    color: white;
+}
+/* Final state */
+.final-state {
+    background-color: rgb(156, 227, 0);
+    background-image: url("./img/rocket.png");
+    background-repeat: no-repeat;
+    background-size: 200px 200px;
+    background-position: center;
+}
+
+
+/* The title above the paragraphs */
+#intro-div .heading {
+    text-align: center;
+    margin-top: 0.5rem;
+    letter-spacing: 0.8px;
+    padding: 0;
+}
+/* The paragraphs */
+#intro-div p {
+    margin-top: 1.5rem;
+    padding-left: 7px;
+}
+/* The logo under the paragraphs */
+#intro-div #intro-logo {
+    margin-top: 5rem;
+}
+
+/* Studio */
+#studio-inner {
+    margin-bottom: 3rem;
+    /* padding-left: 10px; */
+}
+
+/* Studio grid */
+.grid-studio {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.4rem;
+    padding-left: 9px;
+    padding-right: 9px;
+}
+
+.item {
+    position: relative;
+    display: inline-block;
+    max-width: 800px;
+    max-height: 800px;  
+    overflow: hidden;
+}
+
+.item-image img{
+    height: 100%;
+    width: 100%;
+    display: block;
+    transition: all 1s ease;
+}
+
+/* This is the text in the middle of the image */
+/* The parent element (.item) needs to be have a position of relative */
+.middle-text {
+    font-family: "Lato", sans-serif;
+    position: absolute;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 50%;
+    text-align: center;
+    color: #fff;
+    visibility: visible;
+    opacity: 0;
+}
+
+/* ***************************************************** */
+
+/* The hover effect and zoom effect without the text */
+.item:hover .item-image  img{
+    transform: scale(1.2);
+    transition: all 1s ease;
+    overflow: hidden;
+    z-index: 0;
+    -webkit-filter: brightness(30%);
+    transition: all 0.5s ease;
+    opacity: 1;
+}
+
+.item:hover .middle-text {
+    opacity: 1;
+    transition: all 0.5s ease;
+}
+
+/* ************************************************************* */
+/* Work */
+#work {
+    background-color: var(--main-grey);
+    /* line-height: 2.5rem; */
+    
+}
+#work-inner {
+    margin-bottom: 3rem;
+}
+
+/* The big picture with the main office building */
+#building-out {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+    /* max-width: 100%;
+    max-height: 100%; */
+}
+
+/* The div containing the grid */
+.grid-work {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.4rem;
+    padding-left: 9px;
+    padding-right: 9px;
+}
+
+/* First element in grid */
+#ph-long {
+    grid-row: 1 / span 2;
+}
+
+#ph-long img{
+    height: 119%;
+    width: 119%;
+}
+
+/* The larger picture/element in the grid */
+#ph-large {
+    grid-column: 2 / span 2;
+    grid-row: 2 / span 2;
+    /* background-color: black; */
+}
+
+/* The large image in the grid */
+#ph-large img{
+    width: 130%;
+    height: 130%;
+}
+
+#middle-bottom img {
+    width: 100%;
+    height: 100%;
+}
+
+/* Team */
+
+#team-inner {
+    margin-bottom: 3rem;
+    /* padding-left: 10px; */
+}
+
+/* *********************************************************************** */
+/* Slideshow */
+/* *********************************************************************** */
+/* the container that hold the slide div */
+.slide-container {
+    margin: 0 auto;
+    width: 100%;
+    height: 336px;
+    position: relative;
+    border: 1px rgb(255, 255, 255) solid;
+    overflow: hidden;
+}
+
+
+.slides {
+    height: 100%;
+    /* background-color: violet; */
+    display: flex;
+}
+
+.slide {
+    min-width: 100%;
+    /* background-color: yellowgreen; */
+    /* border: 0.5px red solid; */
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    display: inline-block;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.slide img {
+    display: inline-block;
+    width: 340px;
+    height: 335px;
+    margin: auto;
+}
+
+
+.slide-controls {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+/* The right and the left buttons */
+#prev-btn, #next-btn {
+    cursor: pointer;
+    background: rgba( 0, 0, 0, 0.6 );
+    font-size: 30px;
+    border: none;
+    padding: 10px 15px 10px 15px;
+    color: white;
+    border: 1px rgba(255, 255, 255, 0.87) solid;
+    transition: all 0.3s ease;
+}
+#next-btn {
+    padding: 10px 15px 10px 15px;
+}
+
+/* buttons hover effect */
+#prev-btn:hover {
+    padding: 10px 25px 10px 25px;
+}
+
+#next-btn:hover {
+    padding: 10px 25px 10px 25px;
+}
+
+#next-btn:focus, #prev-btn:focus {
+    outline: none;
+}
+
+/* Dots div */
+.dot-buttons {
+    position: absolute;
+    top: 94%;
+    left: 0;
+    /* transform: translateY(-50%); */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
+/* dot button */
+.dot {
+    background: rgba(255, 255, 255, 0.384);
+    height: 9px;
+    width: 9px;
+    margin: 0 3px 0 3px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.dot:hover {
+    cursor: pointer;
+    background: rgb(255, 255, 255);
+    transition: all 0.3s ease;
+}
+
+/* Current class when selecting dot buttons */
+.curr {
+    background: rgb(255, 255, 255);
+}
+
+/* Testimonials *********************************************/
+.testimonial-container {
+    margin: 0 auto;
+    width: 670px;
+    height: 380px;
+    position: relative;
+    /* border: 1px rgb(0, 0, 0) solid; */
+    overflow: hidden; 
+}
+
+/* Div containing the slides with the images */
+.slides-test {
+    height: 100%;
+    /* background-color: violet; */
+    /* display: flex; */
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    /* gap: 30px; */
+}
+
+/* The div containing the div-images */
+.slide-test {
+    margin: auto;
+    width: 335px;
+    position: relative;
+    
+}
+/* div containing the image */
+.img-div {
+    display: block;
+    width: 335px;
+    height: 200px;
+    top: 0;
+    /* border: 1px red solid; */
+}
+/* div for the paragraphs */
+.p-div{
+    display: block;
+    width: 335px;
+    height: 180px;
+    padding-top: 10px;
+}
+/* The actual images inside the div */
+.slide-test img {
+    display: block;
+    width: 200px;
+    height: 195px;
+    margin: auto;
+    border-radius: 50%;
+}
+
+/* Testimonial paragraph */
+.p-testimonial {
+    letter-spacing: 0.3px;
+    word-spacing: 1px;
+    font-size: 15px;
+    color: #666;
+    font-family: 'Lato',sans-serif;
+    text-align: center;
+    line-height: 1.2rem;
+}
+
+blockquote {
+    color: #666;
+    font-size: 12px;
+    line-height: 1.5;
+    text-align: center;
+    padding-top: 15px;
+    font-style: italic;
+}
+
+
+.slide-test-controls {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+/* The right and the left buttons */
+#prev-test-btn, #next-test-btn {
+    cursor: pointer;
+    background: rgba( 0, 0, 0, 0.6 );
+    font-size: 30px;
+    border: none;
+    padding: 10px 15px 10px 15px;
+    color: white;
+    border: 1px rgba(255, 255, 255, 0.87) solid;
+    transition: all 0.3s ease;
+    z-index: 2;
+}
+/* A div containing the prev and next button, ther were issues with their positioning */
+.btn-container{
+    position: relative;
+    width: 670px;
+    margin: auto;
+    transform: translateY(-285px);
+}
+#next-test-btn {
+    padding: 10px 15px 10px 15px;
+    transform: translateX(20px);
+}
+#prev-test-btn {
+    padding: 10px 15px 10px 15px;
+    transform: translateX(-20px);
+    
+}
+
+/* buttons hover effect */
+#prev-test-btn:hover {
+    padding: 10px 25px 10px 25px;
+}
+
+#next-test-btn:hover {
+    padding: 10px 25px 10px 25px;
+}
+
+#next-test-btn:focus, #prev-btn:focus {
+    outline: none;
+}
+
+/* Dots div */
+.dot-test-buttons {
+    position: absolute;
+    top: 94%;
+    left: 0;
+    /* transform: translateY(-50%); */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
+/* dot button */
+.dot-test {
+    background: #666;
+    height: 9px;
+    width: 9px;
+    margin: 0 3px 0 3px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.dot-test:hover {
+    cursor: pointer;
+    background: rgb(0, 0, 0);
+    transition: all 0.3s ease;
+}
+
+/* A day in the life **********************************************/
+
+#day-in-the-life {
+    background-color: var(--main-grey);
+    padding-bottom: 3rem;
+}
+
+#day-inner {
+    margin-bottom: 3rem;
+    /* padding-left: 10px; */
+}
+
+/* the container that hold the slide div */
+.day-container {
+    margin: 0 auto;
+    width: 1110px;
+    height: 624px;
+    position: relative;
+    /* border: 1px rgb(255, 255, 255) solid; */
+    overflow: hidden;
+}
+
+
+.slides-day {
+    height: 100%;
+    /* background-color: violet; */
+    display: flex;
+}
+
+.slide-day {
+    min-width: 100%;
+    display: inline-block;
+    margin: auto;
+    position: relative;
+}
+/* Button at the center of the video screen  */
+#play-button1, #play-button2, #play-button3{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    cursor: pointer;
+    background: rgba( 0, 0, 0, 0.6 );
+    border: none;
+    font-size: 30px;
+    padding: 10px 15px 10px 15px;
+    color: white;
+    border-radius: 5px;
+    /* transition: hover 0.3s ease-in; */
+}
+#play-button1:hover, #play-button2:hover, #play-button3:hover {
+    background: rgba( 0, 0, 0, 0.7 );
+    /* transition: all 0.3s ease-in-out; */
+}
+
+/* .slide-day-controls {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    z-index: 0;
+} */
+
+/* The right and the left buttons */
+#prev-day-btn, #next-day-btn {
+    cursor: pointer;
+    background: rgba( 0, 0, 0, 0 );
+    font-size: 30px;
+    border: none;
+    padding: 10px 15px 10px 15px;
+    color: white;
+    /* border: 1px rgba(255, 255, 255, 0.87) solid; */
+    transition: all 0.3s ease;
+}
+/* the div containing the buttons is removed on this slide because it block the center play button */
+#next-day-btn {
+    padding: 10px 15px 10px 15px;
+    position: absolute;
+    top: 50%;
+    left: 1083px;
+    transform: translate(-50%,-50%);
+}
+#prev-day-btn {
+    position: absolute;
+    top: 50%;
+    left: 25px;
+    transform: translate(-50%,-50%);
+}
+
+/* buttons hover effect */
+#prev-day-btn:hover {
+    padding: 10px 25px 10px 25px;
+    margin-left: 10px;
+}
+
+#next-day-btn:hover {
+    padding: 10px 25px 10px 25px;
+    left: 1073px;
+}
+
+#next-day-btn:focus, #prev-btn:focus {
+    outline: none;
+}
+
+/* Partners ******************************************************** */
+#partners {
+    /* margin-bottom: none; */
+    background-color: black;
+    color: white;
+    /* padding-bottom: 3rem; */
+}
+
+#partners-inner p {
+    padding-bottom: 50px;
+}
+
+/* Grid containing partners logos */
+.partner-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* Partner item containing the image */
+.partner-item{
+    height: 104px;
+    width: 255px;
+    overflow: hidden;
+    background-color: rgb(0, 0, 0);
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.partner-item img{
+    display: block;
+    max-height: 104px;
+    width: 169px;
+}
+/* ------------------Animations for the partners logos------------- */
+.come-in {
+    opacity: 0;
+    animation: come-in 0.5s ease forwards;
+  }
+
+  
+  .come-in:nth-child(5) {
+    animation-delay: 0.1s; /* So they look staggered */
+  }
+  .come-in:nth-child(2) {
+     /* So they look staggered */
+     animation-delay: 0.3s;
+  }
+  .come-in:nth-child(6) {
+     /* So they look staggered */
+     animation-delay: 0.4s;
+  }
+  .come-in:nth-child(3) {
+     /* So they look staggered */
+     animation-delay: 0.5s;
+  }
+  .come-in:nth-child(7) {
+    /* So they look staggered */
+    animation-delay: 0.6s;
+  }
+  .come-in:nth-child(4) {
+     /* So they look staggered */
+     animation-delay: 0.7s;
+  }
+  .come-in:nth-child(8) {
+     /* So they look staggered */
+     animation-delay: 0.8s;
+  }
+  
+  @keyframes come-in {
+    to {opacity: 1; 
+        /* transform: translateX(0);  */
+    }
+  }
+/* --------End of animation-------------------------------------- */
+  
+/* Jobs */
+#jobs {
+    /* margin-bottom: none; */
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    /* padding-bottom: 3rem; */
+    margin-bottom: 40px;
+}
+
+#jobs-inner p {
+    padding-bottom: 50px;
+}
+
+/* Grid containing partners logos */
+.jobs-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 15px;
+}
+
+.job-item {
+    height: 115px;
+    width: 115px;
+    margin: auto;
+    position: relative;
+    border-radius: 5px;
+    border: 0px solid rgb(255, 255, 255);
+    /* background-color: violet; */
+    visibility: visible;
+}
+
+.job-item:hover {
+    cursor: pointer;
+}
+
+/* Top left circles from the job item */
+.skill-select {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    border: inherit;
+    border-radius: 50%;
+    height: 28px;
+    width: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    visibility: hidden;
+}
+
+.job-item img {
+    width: 100%;
+    height: 100%;
+    user-drag: none; 
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+/* These are the classes that style the jobs images */
+.none{}
+.blue{border: 4px solid rgb(67, 240, 253)}
+.yellow{border: 4px solid rgb(252, 209, 47)}
+.green{border: 4px solid rgb(134, 242, 0)}
+
+/* The colored labels unde the job logos */
+.exp-labels {
+    margin-top: 20px;
+}
+
+.exp-labels ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+}
+
+.exp-labels ul li {
+    background-color: lawngreen;
+    padding: 10px 15px;
+    font-size: 10px;
+}
+.exp-labels ul li:first-child {background-color: rgb(67, 240, 253); margin-right: 1px;}
+.exp-labels ul li:nth-child(2) {background-color: rgb(252, 209, 47); margin-right: 1px;}
+
+
+/* Form submission */
+.submit-container {
+    width: 730px;
+    /* background-color: lightcoral; */
+    margin: 40px auto 0 auto;
+    height: 100%;
+}
+
+/* Form  */
+#form-jobs {
+    display: grid;
+    grid-template-areas: 
+    "fname lname"
+    "email phone"
+    "lnk lnk"
+    "txt txt"
+    "info info"
+    "check check"
+    "btn btn";
+    /* grid-template-columns: repeat(2, 1fr); */
+    border: none;
+    padding-top: 5px;
+    height: 100%;
+}
+
+/* Form grid elements */
+#first-name-box, #last-name-box, #email-box, #phone-box, #linkedin-prof, #text-area-form  {
+    max-width: 730px;
+    display: inline-block;
+    padding: 0px 15px;
+    margin: 10px 0px 20px 0;
+}
+
+/* Grid elements area names and span */
+#first-name-box {grid-area: "fname";}
+#last-name-box {grid-area: "lname";}
+#email-box {grid-area: "email";}
+#phone-box {grid-area: "phone";}
+#linkedin-prof {
+    grid-area: "lnk";
+    grid-column: 1 / span 2;
+}
+#text-area-form {
+    grid-area: "txt";
+    grid-column: 1 / span 2;
+}
+
+/* Item inside the form*/
+#first-name-box input, #last-name-box input, #email-box input, #phone-box input, #linkedin-prof input, #text-area-form textarea {
+    width: 100%;
+    border: none;
+    padding: 16px 0 16px 10px ;
+    font-family: "Open Sans","Helvetica Neue", sans-serif;
+    color: #333;
+    letter-spacing: 0.8px;
+    font-weight: lighter;
+    /* border-bottom: 1px solid rgb(255, 255, 255); */
+}
+
+/* Make the textarea taller */
+#text-area-form textarea {
+    height: 200px;
+    outline: none;
+    /* border: none; */
+    -webkit-box-shadow: none;
+    /* -moz-box-shadow: none; */
+}
+
+/* Remove the outline when focusing on inputs */
+#first-name-box input:focus, #last-name-box input:focus, #email-box input:focus, #phone-box input:focus, #linkedin-prof input:focus, #text-area-form textarea:focus {
+    outline: none;
+}
+
+/* The line coming from the left when focused on the input */
+label {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    display: inline-block;
+    height: 0.5px;
+    width: 0px;
+    background-color: black;
+    transition: all 0.5s ease-in-out ;
+}
+
+/* When focusing on the labels and texarea a black border will come from the left */
+input:focus + label{
+    width: 100%;
+}
+textarea:focus + label{
+    width: 100%;
+}
+
+/* Div containing small inputs */
+.input-width {
+    border-bottom: 1px solid #ddd;
+    /* padding-bottom: 8px; */
+    position: relative;
+   
+}
+/* div containing large inputs */
+.input-large {
+    border-bottom: 1px solid #ddd;
+    position: relative;
+}
+
+/* The privacy and terms of usa buttons */
+.form-info-buttons {
+    margin-top: 20px;
+    margin-left: 15px;
+    grid-area: "info";
+    grid-column: 1 / span 2;
+}
+
+.form-info-buttons ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+}
+
+.form-info-buttons ul li a{
+    background-color: #eeeeee;
+    color: black;
+    padding: 10px 15px;
+    font-size: 10px;
+    margin-right: 3px;
+    transition: all 0.3s ease-in-out;
+}
+
+.form-info-buttons ul li a:hover {
+    background-color: #d0d0d0;
+}
+
+/* Privacy consent button */
+.consent-section{
+    margin-left: 15px;
+    margin-top: 20px;
+    grid-area: "check";
+    grid-column: 1 / span 2;
+    width: 100%;
+    height: 20px;
+    display: flex;
+}
+
+/* Div that contains the check button */
+#consent-check {
+    width: 40px;
+    height: 50px;
+    grid-area: "check";
+}
+/* Check button */
+#consent-check #checkbox-btn {
+    height: 15px;
+    width: 15px;
+}
+/* Div containing the consent message */
+#consent-msg {
+    max-width: 100%;
+    font-stretch: expanded;
+    font-size: 12px;
+    letter-spacing: 0.8px;
+    line-height: 15px;
+    margin-right: 25px;
+}
+
+/* Submit button */
+.submit-button {
+    grid-area: "btn";
+    grid-column: auto / span 2;
+    height: 100%;
+    box-sizing: border-box;
+    /* background-color: brown; */
+    max-width: 100%;
+    margin-top: 20px;
+    margin-left: 15px;
+    margin-right: 15px;
+    /* margin-bottom: 40px; */
+}
+/*  The actual button inside the submit button div */
+#input-button {
+    background: rgb(134, 242, 0);
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 20px;
+    padding: 17px;
+    border: none;
+    border-radius: 2px;
+    font-size: 18px;
+    transition: all 0.3s ease-in-out;
+    font-family: 'Lato', sans-serif;
+    
+}
+
+#input-button:hover {
+    background: #9ce300;
+    cursor: pointer;
+}
+#input-button:focus{
+    outline: none;
+}
+
+/* Footer bottom of page */
+.footer-bottom {
+    background-color: black;
+    height: 137px;
+    /* padding-bottom: 20px; */
+}
+
+#footer-container {
+    /* background: red; */
+    display: flex;
+    /* flex-direction: column; */
+    height: 100%;
+}
+
+/* Left block of the footer */
+.div-logo-footer {
+    width: 90px;
+    padding-top: 18px;
+}
+
+/* Middle part of the footer */
+.div-footer-middle {
+    display: inline-block;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    /* background: red; */
+    margin-top: 40px;
+}
+
+/* List containing cookies, privacy etc... */
+.div-footer-middle #footer-list {
+    list-style: none;
+    color: #666;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+}
+
+/* List elements */
+.div-footer-middle #footer-list li {
+    text-decoration: none;
+    color: #555;
+    font-family: "Lato", sans-serif;
+    font-size: 10px;
+}
+
+/* Links inside the list */
+.div-footer-middle #footer-list li a {
+    text-decoration: none;
+    color: #555;
+    padding: 0 9px 0 9px;
+    word-spacing: 2px;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease-in-out;
+}
+
+.div-footer-middle #footer-list li a:hover {
+    color: white;
+}
+/* Copyright 2020 Digital Tech  */
+.div-footer-middle #copyright-reserved {
+    color: #555;
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    padding-top: 18px;
+    text-align: center;
+    margin: auto;
+}
+
+/* Right part of the footer */
+.div-footer-right {
+    margin-top: 5px;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+#back-top {
+    text-decoration: none;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-size: 9px;
+    word-spacing: 1px;
+}
+
+
+
+

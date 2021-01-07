@@ -1,0 +1,603 @@
+:root {
+    --modal-duration: 1s;
+    --primary-color: #9ce300;
+    --secondary: #fff;
+    --main-grey: #f4f4f4;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Lato', sans-serif;
+    scroll-behavior: smooth;
+    transition: all 1s ease;
+    overflow-x: hidden !important;
+    overflow-y: scroll;
+    transition: all 1s ease;
+}
+
+/* The transparent nav bar on the top containing the logo and burger button */
+#top-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Top Navbar Logo */
+#logo {
+    margin-top: 10px;
+    height: 80%;
+    width: 80%;
+    
+}
+/* When hovering over the logo in the navbar */
+.img-home-link {
+    transition: all 0.5s ease;
+}
+.img-home-link:hover {
+    opacity: 0.6;
+    transition: all 0.5s ease;
+}
+
+/* The container for the top white nav */
+#sticky-nav{
+    background-color: white;
+    /* position: sticky;
+    top: 0;
+    width: 100%;
+    /* display: none; */
+    /* z-index: 0; */
+    position: fixed; 
+    top: -100px;
+    width: 100%;
+    display: block;
+    transition: top 0.5s;
+    border-bottom: 1px rgba(63, 63, 63, 0.1) solid;
+    z-index: 1;
+}
+
+/* The top WHITE nav bar appearing after scrolling down */
+#top-nav-white {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    color: black;
+    z-index: 2;
+}
+.main-nav {
+    max-width: 100%;
+    margin: auto;
+    width: 1150px;
+}
+/* The toggle button inside the white navbar */
+#top-nav-white .toggle {
+    font-size: 20px;
+    background: none;
+    color: black;
+    padding: 0.4rem 0.6rem;
+    border: 2px black solid;
+    cursor: pointer;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+}
+
+/* Top Navbar Logo */
+#logo {
+    margin-top: 10px;
+    height: 80%;
+    width: 80%;   
+}
+
+/* All link elements */
+a {
+    /* display: inline-block; */
+    text-decoration: none;
+}
+
+/* Main header that contains the colorful background image */
+#header-home {
+    background: chartreuse;
+    background: url("./img/main-bg.jpg") no-repeat center center/cover;
+    height: 100vh;
+    width: 100%;
+}
+
+/* The side bar */
+#sidebar {
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 300px;
+    height: 100%;
+    z-index: 100;
+    transition: all 1s ease;
+    transform: translateX(-300px);
+    min-height: 100%;
+    padding: 0;
+    box-shadow: inset -7px 0 9px -7px rgba( 0, 0, 0, 0.6 );
+}
+
+#sidebar.show-nav {
+    transform: translateX(0px);
+}
+
+/* The list inside the sidebar */
+#sidebar ul {
+    margin-top: 80px;
+    list-style: none;
+}
+/* the sidebar list element */
+#sidebar ul li {
+    /* display: block;
+    color: #444;
+    padding: 0;  
+    /* width: 100%;  */
+    /* cursor: pointer; */
+    /* padding: 0;
+    margin: 0;
+    padding-top: 0;  */
+
+    width: 100%;
+    display: block;
+    margin-bottom: 0;
+}
+/* the sidebar links */
+#sidebar ul li a {
+    font-family: 'Lato',sans-serif;
+    font-size: 12px;
+    line-height: 1;
+    color: #999999;
+    text-decoration: none;
+    display: block;
+    /* padding: 1.3rem 4rem; */
+    padding-left: 40px;
+    padding-bottom: 13px;
+    padding-top: 13px;
+    word-wrap: break-word;
+    transition: all 0.3s ease;
+}
+/* hover state for links */
+#sidebar ul li a:hover {
+    color: black; 
+    transition: all 0.3s ease;
+}
+/* The header links */
+#sidebar ul li .head1 {
+    font-family: 'Chronicle Display',serif;
+    color: black;
+    font-weight: 800;
+    font-size: 28px;
+}
+/* The header link hover state */
+#sidebar ul li .head1:hover {
+    color: black;
+}
+
+/* The close button (the x in the right corner of the menu) */
+#close {
+    display: inline-block;
+    margin-top: 25px;
+    margin-left: 260px;
+    font-size: 16px;
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    cursor: pointer;
+    /* margin-left: 170px; */
+    transition: all 0.5s ease;
+}
+
+#close:hover{
+    color: #666;
+    transition: all 0.5s ease;
+}
+
+#close:focus{
+    outline: none;
+}
+
+
+
+
+/* Utility */
+.container {
+    /* display: block; */
+    /* padding: 15px; */
+    max-width: 100%;
+    margin: auto;
+    max-width: 1150px;
+}
+
+.div-block-black {
+    height: 90px;
+    width: 100vw;
+    background-color: black;
+}
+.div-block-white {
+    height: 90px;
+    width: 100vw;
+    background-color: #fff;
+}
+
+.div-block-grey {
+    height: 90px;
+    width: 100vw;
+    background-color: #f4f4f4;
+    /* border-color: #f4f4f4; */
+}
+
+.main-header {
+    font-size: 4rem;
+    font-weight: 400;
+    font-family: 'Chronicle Display',serif;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    margin: 0 0 2rem 0;
+}
+
+.p-style {
+    margin-top: 1.5rem;
+    padding-left: 7px;
+}
+
+.p-big {
+    font-family: "Lato", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 0.4px;
+}
+
+/* the toggle button/burger */
+.toggle {
+    font-size: 20px;
+    background: none;
+    color: #fff;
+    padding: 0.4rem 0.6rem;
+    border: 2px #fff solid;
+    cursor: pointer;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+}
+button:focus {
+    outline: none;
+}
+
+/* Overlay */
+.modal-container {
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    animation-name: modalopen;
+    animation-duration: 0.5s;
+}
+/* The class added after clicking the burger button */
+.modal-container.show-modal {
+    display: block;
+    z-index: 10;
+}
+
+@keyframes modalopen {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* site font 'Open Sans','Helvetica Neue',sans-serif; */
+/* h1, h2, h3, h4 {font-family: 'Chronicle Display',serif;} */
+
+/* Intro */
+#intro {
+    background-color: black;
+    line-height: 2.5rem;
+}
+
+#intro-div{
+    background-color: black;
+    color: #fff;
+    margin: auto;
+    padding-top: 90px;
+    /* padding-bottom: 90px; */
+    /* margin: 0 0 3rem 0; */
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 23px;
+    max-width: 800px;
+    letter-spacing: 0.5px;
+    
+}
+
+/* The big circle above the title */
+#intro-div #circle {
+    display: block;
+    background-color: var(--primary-color);
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    margin: auto;
+    cursor: pointer;
+}
+/* The title above the paragraphs */
+#intro-div .heading {
+    text-align: center;
+    margin-top: 0.5rem;
+    letter-spacing: 0.8px;
+    padding: 0;
+}
+/* The paragraphs */
+#intro-div p {
+    margin-top: 1.5rem;
+    padding-left: 7px;
+}
+/* The logo under the paragraphs */
+#intro-div #intro-logo {
+    margin-top: 5rem;
+}
+
+/* Studio */
+#studio-inner {
+    margin-bottom: 3rem;
+    /* padding-left: 10px; */
+}
+
+/* Studio grid */
+.grid-studio {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.4rem;
+    padding-left: 9px;
+    padding-right: 9px;
+}
+
+.item {
+    position: relative;
+    display: inline-block;
+    max-width: 800px;
+    max-height: 800px;  
+    overflow: hidden;
+}
+
+.item-image img{
+    height: 100%;
+    width: 100%;
+    display: block;
+    transition: all 1s ease;
+}
+
+/* This is the text in the middle of the image */
+/* The parent element (.item) needs to be have a position of relative */
+.middle-text {
+    font-family: "Lato", sans-serif;
+    position: absolute;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 50%;
+    text-align: center;
+    color: #fff;
+    visibility: visible;
+    opacity: 0;
+}
+
+/* ***************************************************** */
+
+/* The hover effect and zoom effect without the text */
+.item:hover .item-image  img{
+    transform: scale(1.2);
+    transition: all 1s ease;
+    overflow: hidden;
+    z-index: 0;
+    -webkit-filter: brightness(30%);
+    transition: all 0.5s ease;
+    opacity: 1;
+}
+
+.item:hover .middle-text {
+    opacity: 1;
+    transition: all 0.5s ease;
+}
+
+/* ************************************************************* */
+/* Work */
+#work {
+    background-color: var(--main-grey);
+}
+
+#work-inner {
+    margin-bottom: 3rem;
+    /* padding-left: 10px; */
+}
+
+/* The big picture with the main office building */
+#building-out {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+    /* max-width: 100%;
+    max-height: 100%; */
+}
+
+/* The div containing the grid */
+.grid-work {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.4rem;
+    padding-left: 9px;
+    padding-right: 9px;
+}
+
+/* First element in grid */
+#ph-long {
+    grid-row: 1 / span 2;
+}
+
+#ph-long img{
+    height: 119%;
+    width: 119%;
+}
+
+/* The larger picture/element in the grid */
+#ph-large {
+    grid-column: 2 / span 2;
+    grid-row: 2 / span 2;
+    /* background-color: black; */
+}
+
+/* The large image in the grid */
+#ph-large img{
+    width: 130%;
+    height: 130%;
+}
+
+#middle-bottom img {
+    width: 100%;
+    height: 100%;
+}
+
+/* Team */
+
+#team-inner {
+    margin-bottom: 3rem;
+    /* padding-left: 10px; */
+}
+
+/* *********************************************************************** */
+/* Slideshow */
+/* *********************************************************************** */
+/* the container that hold the slide div */
+.slide-container {
+    margin: 0 auto;
+    width: 100%;
+    height: 336px;
+    position: relative;
+    border: 1px rgb(255, 255, 255) solid;
+    overflow: hidden;
+}
+
+
+.slides {
+    height: 100%;
+    /* background-color: violet; */
+    display: flex;
+}
+
+.slide {
+    min-width: 100%;
+    /* background-color: yellowgreen; */
+    /* border: 0.5px red solid; */
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    display: inline-block;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.slide img {
+    display: inline-block;
+    width: 340px;
+    height: 335px;
+    margin: auto;
+}
+
+
+
+.slide-controls {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+/* The right and the left buttons */
+#prev-btn, #next-btn {
+    cursor: pointer;
+    background: rgba( 0, 0, 0, 0.6 );
+    font-size: 30px;
+    border: none;
+    padding: 10px 15px 10px 15px;
+    color: white;
+    border: 1px rgba(255, 255, 255, 0.87) solid;
+    transition: all 0.3s ease;
+}
+#next-btn {
+    padding: 10px 15px 10px 15px;
+}
+
+/* buttons hover effect */
+#prev-btn:hover {
+    padding: 10px 25px 10px 25px;
+}
+
+#next-btn:hover {
+    padding: 10px 25px 10px 25px;
+}
+
+#next-btn:focus, #prev-btn:focus {
+    outline: none;
+}
+
+/* Dots div */
+.dot-buttons {
+    position: absolute;
+    top: 94%;
+    left: 0;
+    /* transform: translateY(-50%); */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
+/* dot button */
+.dot {
+    background: rgba(255, 255, 255, 0.384);
+    height: 9px;
+    width: 9px;
+    margin: 0 3px 0 3px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.dot:hover {
+    cursor: pointer;
+    background: rgb(255, 255, 255);
+    transition: all 0.3s ease;
+}
+
+/* Current class when selecting dot buttons */
+.curr {
+    background: rgb(255, 255, 255);
+}
+
+/* Testimonials *********************************************/
+/* .testimonial-container {
+    margin: 0 auto;
+    width: 100%;
+    height: 336px;
+    position: relative;
+    border: 1px rgb(255, 255, 255) solid; */
+    /* overflow: hidden; */
+/* } */
